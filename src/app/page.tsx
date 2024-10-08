@@ -15,7 +15,7 @@ export default function Home() {
       />
       <div className="w-full mx-auto sm:w-4/5 md:w-3/5 max-w-[628px] px-6 z-10">
         <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-5xl font-semibold leading-[62px]">
+          <h1 className="text-3xl md:text-5xl font-semibold leading-[62px]  mb-1 sm:mb-3">
             Master Web3 skills
           </h1>
           <p className="leading-5 text-sm sm:text-base">
