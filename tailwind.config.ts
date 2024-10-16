@@ -24,6 +24,7 @@ const config: Config = {
         },
         neutral: {
           100: "rgba(179, 179, 179, 1)",
+          90: "rgba(168, 168, 168, 1)",
         },
         purple: {
           100: "rgba(125, 43, 212, 1)",
