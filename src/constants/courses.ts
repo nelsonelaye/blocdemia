@@ -11,6 +11,23 @@ const courses = [
       "Web3 is an idea for a new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics.",
     duration: "20mins",
     courseImage: web3,
+    lessons: [
+      {
+        title: "Introduction to Blockchain",
+        duration: "3mins",
+        courseImage: web3,
+      },
+      {
+        title: "wow Web3 works",
+        duration: "10mins",
+        courseImage: web3,
+      },
+      {
+        title: "Importance of Web3",
+        duration: "12mins",
+        courseImage: web3,
+      },
+    ],
   },
   {
     title: "Web3 Wallets",

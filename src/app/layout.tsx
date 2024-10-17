@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+// import "@mantine/core/styles.css";
 import "@coinbase/onchainkit/styles.css";
 import "./globals.css";
 import { cookieToInitialState } from "wagmi";
 import { getConfig } from "@/utils/wagmi";
 import { headers } from "next/headers";
 import { Providers } from "@/components/providers/Providers";
+import { createTheme, MantineProvider } from "@mantine/core";
+
+const theme = createTheme({
+  /** Put your mantine theme override here */
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -45,7 +51,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers initialState={initialState}>{children}</Providers>
+        <Providers initialState={initialState}>
+          <MantineProvider theme={theme}>{children}</MantineProvider>
+        </Providers>
       </body>
     </html>
   );

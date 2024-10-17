@@ -21,7 +21,7 @@ const Dashboard = () => {
           </div>
           <div>
             <h3 className="font-semibold text-lg mb-5">Recommeded courses</h3>
-            <div className="w-full grid grid-cols-3  gap-6">
+            <div className="w-full flex flex-row flex-wrap  gap-6">
               {courses?.slice(0, 3)?.map((course) => (
                 <CourseCard
                   key={course.title}

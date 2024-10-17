@@ -1,5 +1,6 @@
 import Button from "@/components/common/Button";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import { TbClockPlay } from "react-icons/tb";
 
 interface iProps {
@@ -10,7 +11,7 @@ interface iProps {
 }
 const CourseCard = ({ title, content, courseImage, time }: iProps) => {
   return (
-    <div className="w-full rounded-s-3xl col-span-1 flex flex-col gap-4">
+    <div className="w-full max-w-[381px] rounded-s-3xl col-span-1 flex flex-col gap-4">
       <div className="bg-gray-800 rounded-t-md w-full h-[202px] rounded-tr-3xl rounded-tl-3xl overflow-hidden">
         {courseImage && (
           <Image
@@ -31,10 +32,16 @@ const CourseCard = ({ title, content, courseImage, time }: iProps) => {
         incorporates concepts such as decentralization, blockchain technologies,
         and token-based economics.
       </p>
-      <p className="text-sm   text-neutral-90 font-normal leading-[22px] mb-6 flex items-center">
+      <p className="text-sm   text-neutral-90 font-normal leading-[22px] mb-2 flex items-center">
         <TbClockPlay fontSize={16} className="mr-[9.27px]" /> {time}
       </p>
-      <Button text="continue learning" />
+      <Link href={`/courses/${title}`}>
+        <Button
+          text="continue learning"
+          withArrow={true}
+          disabled={title.toLowerCase() !== "web3"}
+        />
+      </Link>
     </div>
   );
 };

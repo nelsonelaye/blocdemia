@@ -8,7 +8,7 @@ const Courses = () => {
     <DashboardLayout>
       <section className="mb-[28px] border-b border-[#545454] pb-[32px]">
         <h3 className="text-lg font-semibold mb-5">Recommended Courses</h3>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="flex flex-row flex-wrap gap-6">
           {courses?.slice(0, 3)?.map((course) => (
             <CourseCard
               key={course.title}
@@ -22,7 +22,7 @@ const Courses = () => {
       </section>
       <section className="">
         <h3 className="text-lg font-semibold mb-5">All Courses</h3>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="flex flex-row flex-wrap gap-6">
           {courses?.map((course) => (
             <CourseCard
               key={course.title}
