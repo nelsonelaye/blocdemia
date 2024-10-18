@@ -28,6 +28,116 @@ const courses = [
         courseImage: web3,
       },
     ],
+    quiz: [
+      {
+        question: "What is a key feature of blockchain technology?",
+        options: [
+          {
+            value: " It allows transactions to be erased after a certain time.",
+            isCorrect: false,
+          },
+          {
+            value:
+              "It keeps a digital record of transactions that cannot be changed.",
+            isCorrect: true,
+          },
+          {
+            value: "It only works with cryptocurrency transactions.",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "What is a key feature of blockchain technology?",
+        options: [
+          {
+            value: " It allows transactions to be erased after a certain time.",
+            isCorrect: false,
+          },
+          {
+            value:
+              "It keeps a digital record of transactions that cannot be changed.",
+            isCorrect: true,
+          },
+          {
+            value: "It only works with cryptocurrency transactions.",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "What is a key feature of blockchain technology?",
+        options: [
+          {
+            value: " It allows transactions to be erased after a certain time.",
+            isCorrect: false,
+          },
+          {
+            value:
+              "It keeps a digital record of transactions that cannot be changed.",
+            isCorrect: true,
+          },
+          {
+            value: "It only works with cryptocurrency transactions.",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "What is a key feature of blockchain technology?",
+        options: [
+          {
+            value: " It allows transactions to be erased after a certain time.",
+            isCorrect: false,
+          },
+          {
+            value:
+              "It keeps a digital record of transactions that cannot be changed.",
+            isCorrect: true,
+          },
+          {
+            value: "It only works with cryptocurrency transactions.",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "What is a key feature of blockchain technology?",
+        options: [
+          {
+            value: " It allows transactions to be erased after a certain time.",
+            isCorrect: false,
+          },
+          {
+            value:
+              "It keeps a digital record of transactions that cannot be changed.",
+            isCorrect: true,
+          },
+          {
+            value: "It only works with cryptocurrency transactions.",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "What is a key feature of blockchain technology?",
+        options: [
+          {
+            value: " It allows transactions to be erased after a certain time.",
+            isCorrect: false,
+          },
+          {
+            value:
+              "It keeps a digital record of transactions that cannot be changed.",
+            isCorrect: true,
+          },
+          {
+            value: "It only works with cryptocurrency transactions.",
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
   },
   {
     title: "Web3 Wallets",

@@ -1,15 +1,23 @@
 "use client";
 import DashboardLayout from "@/layout/DashboardLayout";
-import React, { useMemo } from "react";
-import { Tabs, rem } from "@mantine/core";
+import React, { useMemo, useState } from "react";
+import * as Tabs from "@radix-ui/react-tabs";
 import courses from "@/constants/courses";
 import LessonCard from "@/components/common/LessonCard";
+import Button from "@/components/common/Button";
+import Quiz from "@/components/modals/Quiz";
 
 const Course = ({ params }: { params: { course: string } }) => {
+  const [openModal, setOpenModal] = useState(false);
   const lessons = useMemo(() => {
     return courses.find(
       (e) => e.title.toLowerCase() === params.course.toLowerCase()
     )?.lessons;
+  }, [params]);
+  const quizQuestions = useMemo(() => {
+    return courses.find(
+      (e) => e.title.toLowerCase() === params.course.toLowerCase()
+    )?.quiz;
   }, [params]);
   return (
     <div>
@@ -20,20 +28,34 @@ const Course = ({ params }: { params: { course: string } }) => {
           <div>
             <div className="w-full h-[370px] bg-[#323232] mb-6"></div>
 
-            <Tabs defaultValue="gallery" className="px-[24px]">
-              <Tabs.List className="gap-7 mb-6 border-b-[#545454] border-b">
-                <Tabs.Tab value="resources" className="font-medium py-4 mr-7">
+            <Tabs.Root className="w-full" defaultValue="resources">
+              <Tabs.List
+                className="gap-7 mb-6 border-b-[#545454] border-b"
+                aria-label="Manage your account"
+              >
+                <Tabs.Trigger
+                  className="font-medium text-base py-4 mr-7 data-[state=active]:border-b data-[state=active]:border-white"
+                  value="resources"
+                >
                   Resources
-                </Tabs.Tab>
-                <Tabs.Tab value="lessons" className="font-medium py-4 mr-7">
+                </Tabs.Trigger>
+                <Tabs.Trigger
+                  className="font-medium text-base py-4 mr-7 data-[state=active]:border-b data-[state=active]:border-white"
+                  value="lessons"
+                >
                   Lessons in course
-                </Tabs.Tab>
-                <Tabs.Tab value="quiz" className="font-medium py-4 mr-7">
-                  take Quiz
-                </Tabs.Tab>
+                </Tabs.Trigger>
+                <Tabs.Trigger
+                  className="font-medium text-base py-4 mr-7 data-[state=active]:border-b data-[state=active]:border-white"
+                  value="quiz"
+                >
+                  Take quiz
+                </Tabs.Trigger>
               </Tabs.List>
-
-              <Tabs.Panel value="resources">
+              <Tabs.Content
+                className="grow rounded-b-md  p-5 outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
+                value="resources"
+              >
                 <div className="mb-[40px]">
                   <span className="text-[#a8a8a8] mb-[18px]">Blockchain</span>
                   <h3 className="text-2xl font-semibold">
@@ -61,9 +83,8 @@ const Course = ({ params }: { params: { course: string } }) => {
                   </h4>
                   <p className="text-[#a8a8a8]">example.com</p>
                 </div>
-              </Tabs.Panel>
-
-              <Tabs.Panel value="lessons" className="space-y-4 > * + *">
+              </Tabs.Content>
+              <Tabs.Content className="space-y-4 > * + *" value="lessons">
                 {lessons?.map((lesson, i) => (
                   <LessonCard
                     key={lesson.title}
@@ -71,10 +92,35 @@ const Course = ({ params }: { params: { course: string } }) => {
                     isPlaying={i === 0}
                   />
                 ))}
-              </Tabs.Panel>
+              </Tabs.Content>
+              <Tabs.Content value="quiz">
+                <h3 className="text-2xl font-semibold text-[#DCBBFF] mb-4">
+                  Attention!
+                </h3>
 
-              <Tabs.Panel value="quiz">Settings tab content</Tabs.Panel>
-            </Tabs>
+                <ul className="list-disc !p-0  space-y-6 > * + * mb-6">
+                  <li className="font-normal text-[#D2D2D2]">
+                    You will have to complete all the lessons in this course to
+                    take the quiz. If you haven’t go back and do so.
+                  </li>
+
+                  <li>
+                    NFT Certificates will be awarded to students who scored{" "}
+                    <span className="text-[#DCBBFF]">at least 80%.</span>
+                  </li>
+
+                  <li>
+                    You only have{" "}
+                    <span className="text-[#DCBBFF]">2 chances.</span> If you
+                    don’t score up to 80%, sorry we don’t have a certificate for
+                    you.
+                  </li>
+                </ul>
+                <p className="text-[#DCBBFF] italic">Best of luck, champ!</p>
+
+                <Quiz title={params.course} quiz={quizQuestions!} />
+              </Tabs.Content>
+            </Tabs.Root>
           </div>
         </section>
       </DashboardLayout>
