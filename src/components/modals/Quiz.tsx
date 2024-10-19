@@ -11,7 +11,7 @@ interface optionInterface {
 
 interface quizInterface {
   question: string;
-  options: optionInterface[];
+  options: optionInterface[] | undefined;
 }
 
 const Quiz = ({ quiz, title }: { quiz: quizInterface[]; title: string }) => {

@@ -10,6 +10,7 @@ interface iProps {
   courseImage?: string | StaticImageData;
 }
 const CourseCard = ({ title, content, courseImage, time }: iProps) => {
+  const availableCourses = ["web3 wallets"];
   return (
     <div className="w-full max-w-[381px] rounded-s-3xl col-span-1 flex flex-col gap-4">
       <div className="bg-gray-800 rounded-t-md w-full h-[202px] rounded-tr-3xl rounded-tl-3xl overflow-hidden">
@@ -37,9 +38,13 @@ const CourseCard = ({ title, content, courseImage, time }: iProps) => {
       </p>
       <Link href={`/courses/${title}`}>
         <Button
-          text="continue learning"
+          text={
+            !availableCourses.includes(title.toLowerCase())
+              ? "coming soon"
+              : "continue learning"
+          }
           withArrow={true}
-          disabled={title.toLowerCase() !== "web3"}
+          disabled={!availableCourses.includes(title.toLowerCase())}
         />
       </Link>
     </div>

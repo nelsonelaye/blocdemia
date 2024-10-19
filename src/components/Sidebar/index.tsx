@@ -8,6 +8,8 @@ import { usePathname } from "next/navigation";
 import { RiSettings2Line } from "react-icons/ri";
 import { HiOutlineUser } from "react-icons/hi2";
 import { twMerge } from "tailwind-merge";
+import settingsIcon from "@/assets/images/icons/setting.png";
+import userIcon from "@/assets/images/icons/user-profile.png";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -23,27 +25,28 @@ const Sidebar = () => {
         />
       </div>
 
-      <nav className="flex flex-col ">
-        <div className="flex flex-col flex-1 flex-grow ">
-          {routes.map((route) =>
-            pathname === route.link ? (
-              <Link
-                key={route.name}
-                href={route.link}
-                className=" bg-[#9633FF] rounded-[18px] px-[12px] py-[16px] w-full  font-medium text-sm leading-[22px]"
-              >
-                {route.name}
-              </Link>
-            ) : (
-              <Link
-                key={route.name}
-                href={route.link}
-                className="px-[12px] py-[16px] w-full  font-medium text-sm leading-[22px]"
-              >
-                {route.name}
-              </Link>
-            )
-          )}
+      <nav className="flex h-[80%] flex-col ">
+        <div className="flex flex-col flex-1  ">
+          {routes.map((route) => (
+            <Link
+              key={route.name}
+              href={route.link}
+              className={twMerge(
+                "px-[12px] py-[16px] w-full flex items-center gap-2 font-medium text-sm leading-[22px]",
+                pathname === route.link && "bg-[#9633FF] rounded-[18px]"
+              )}
+            >
+              <Image
+                src={route.icon}
+                alt={route.name}
+                width={16}
+                height={16}
+                unoptimized
+                quality={100}
+              />
+              {route.name}
+            </Link>
+          ))}
         </div>
 
         <div className="mb-4">
@@ -54,7 +57,14 @@ const Sidebar = () => {
               pathname === "#settings" && "bg-[#9633FF] "
             )}
           >
-            <RiSettings2Line fontSize={16} />
+            <Image
+              src={settingsIcon}
+              alt="setting"
+              width={16}
+              height={16}
+              unoptimized
+              quality={100}
+            />
             Settings
           </Link>
           <Link
@@ -64,7 +74,14 @@ const Sidebar = () => {
               pathname === "#profile" && "bg-[#9633FF] "
             )}
           >
-            <HiOutlineUser fontSize={16} />
+            <Image
+              src={userIcon}
+              alt="user"
+              width={16}
+              height={16}
+              unoptimized
+              quality={100}
+            />
             Profile
           </Link>
         </div>

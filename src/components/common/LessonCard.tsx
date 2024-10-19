@@ -8,10 +8,20 @@ interface props {
   duration: string;
   courseImage?: string | StaticImageData;
   isPlaying?: boolean;
+  onClick?: () => void;
 }
-const LessonCard = ({ title, isPlaying, courseImage, duration }: props) => {
+const LessonCard = ({
+  title,
+  isPlaying,
+  courseImage,
+  duration,
+  onClick,
+}: props) => {
   return (
-    <div className="w-full flex items-center gap-6 ">
+    <div
+      className="w-full flex items-center gap-6 cursor-pointer"
+      onClick={onClick}
+    >
       <div className="relative bg-gray-800  w-full max-w-[218px] h-[112px] rounded-[6px] overflow-hidden">
         {courseImage && (
           <Image
@@ -26,7 +36,7 @@ const LessonCard = ({ title, isPlaying, courseImage, duration }: props) => {
         )}
 
         <div className="absolute bottom-0 left-0 w-full bg-[#545454] h-[4px]"></div>
-        <div className="absolute bottom-0 left-0 w-[35%] bg-[#F32C26] h-[6px]"></div>
+        <div className="absolute bottom-0 left-0  bg-[#F32C26] h-[6px]"></div>
       </div>
 
       <div>

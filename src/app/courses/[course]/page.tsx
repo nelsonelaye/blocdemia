@@ -9,24 +9,41 @@ import Quiz from "@/components/modals/Quiz";
 
 const Course = ({ params }: { params: { course: string } }) => {
   const [openModal, setOpenModal] = useState(false);
-  const lessons = useMemo(() => {
+  const [playingLesson, setPlayingLesson] = useState(0);
+  const courseData = useMemo(() => {
     return courses.find(
-      (e) => e.title.toLowerCase() === params.course.toLowerCase()
-    )?.lessons;
+      (e) =>
+        e.title.toLowerCase() ===
+        decodeURIComponent(params.course).toLowerCase()
+    );
   }, [params]);
-  const quizQuestions = useMemo(() => {
-    return courses.find(
-      (e) => e.title.toLowerCase() === params.course.toLowerCase()
-    )?.quiz;
-  }, [params]);
+
   return (
     <div>
       <DashboardLayout>
         <section className="mb-[28px] bg-[#222]  pb-[32px] rounded-[16px]">
-          <h3 className="text-lg font-medium px-6 py-7">{params.course}</h3>
+          <h3 className="text-lg font-medium px-6 py-7">
+            {decodeURIComponent(params.course)}
+          </h3>
 
           <div>
-            <div className="w-full h-[370px] bg-[#323232] mb-6"></div>
+            <div className="w-full h-[370px] bg-[#323232] mb-6">
+              <iframe
+                width="425"
+                height="344"
+                src={
+                  courseData?.lessons &&
+                  courseData?.lessons[playingLesson]?.source
+                }
+                frameBorder="0"
+                allowFullScreen
+                className="w-full h-full object-contain"
+                title={
+                  courseData?.lessons &&
+                  courseData?.lessons[playingLesson]?.title
+                }
+              ></iframe>
+            </div>
 
             <Tabs.Root className="w-full" defaultValue="resources">
               <Tabs.List
@@ -57,9 +74,11 @@ const Course = ({ params }: { params: { course: string } }) => {
                 value="resources"
               >
                 <div className="mb-[40px]">
-                  <span className="text-[#a8a8a8] mb-[18px]">Blockchain</span>
+                  <span className="text-[#a8a8a8] mb-[18px]">
+                    {courseData?.category}
+                  </span>
                   <h3 className="text-2xl font-semibold">
-                    Introduction to Blockchain
+                    {decodeURIComponent(params.course)}
                   </h3>
                 </div>
                 <div className="mb-[40px]">
@@ -85,11 +104,14 @@ const Course = ({ params }: { params: { course: string } }) => {
                 </div>
               </Tabs.Content>
               <Tabs.Content className="space-y-4 > * + *" value="lessons">
-                {lessons?.map((lesson, i) => (
+                {courseData?.lessons?.map((lesson, i) => (
                   <LessonCard
                     key={lesson.title}
                     {...lesson}
-                    isPlaying={i === 0}
+                    isPlaying={i === playingLesson}
+                    onClick={() => {
+                      setPlayingLesson(i);
+                    }}
                   />
                 ))}
               </Tabs.Content>
@@ -118,7 +140,9 @@ const Course = ({ params }: { params: { course: string } }) => {
                 </ul>
                 <p className="text-[#DCBBFF] italic">Best of luck, champ!</p>
 
-                <Quiz title={params.course} quiz={quizQuestions!} />
+                {courseData?.quiz && (
+                  <Quiz title={params.course} quiz={courseData?.quiz} />
+                )}
               </Tabs.Content>
             </Tabs.Root>
           </div>

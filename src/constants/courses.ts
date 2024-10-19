@@ -6,7 +6,43 @@ import smartContract from "@/assets/images/smart_contracts.png";
 
 const courses = [
   {
+    title: "Web3 Wallets",
+    category: "Wallets",
+    descriptiopn:
+      "Web3 is an idea for a new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics.",
+    duration: "10mins",
+    courseImage: wallet,
+    lessons: [
+      {
+        title: "How to create Web3 wallet",
+        duration: "3mins",
+        courseImage: wallet,
+        source:
+          "https://drive.google.com/file/d/1EMiEahaof7uKQ_Qyhs_fMVxcI7sbxyik/preview",
+      },
+      {
+        title: "How to fund Web3 wallet",
+        duration: "6mins",
+        courseImage: wallet,
+        source:
+          "https://drive.google.com/file/d/1a1JwIdhIEnsd6438rcNEzWKOJCp7zBEe/preview",
+      },
+    ],
+  },
+
+  {
+    title: "Blockchain",
+    category: "Blockchain",
+    descriptiopn:
+      "Web3 is an idea for a new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics.",
+    duration: "20mins",
+    courseImage: blockchain,
+    lessons: [],
+  },
+
+  {
     title: "Web3",
+    category: "Web3",
     descriptiopn:
       "Web3 is an idea for a new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics.",
     duration: "20mins",
@@ -16,16 +52,19 @@ const courses = [
         title: "Introduction to Blockchain",
         duration: "3mins",
         courseImage: web3,
+        source: "",
       },
       {
         title: "wow Web3 works",
         duration: "10mins",
         courseImage: web3,
+        source: "",
       },
       {
         title: "Importance of Web3",
         duration: "12mins",
         courseImage: web3,
+        source: "",
       },
     ],
     quiz: [
@@ -139,26 +178,15 @@ const courses = [
       },
     ],
   },
-  {
-    title: "Web3 Wallets",
-    descriptiopn:
-      "Web3 is an idea for a new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics.",
-    duration: "20mins",
-    courseImage: wallet,
-  },
+
   {
     title: "NFTs",
+    category: "NFTs",
     descriptiopn:
       "Web3 is an idea for a new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics.",
     duration: "20mins",
     courseImage: nft,
-  },
-  {
-    title: "Blockchain",
-    descriptiopn:
-      "Web3 is an idea for a new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics.",
-    duration: "20mins",
-    courseImage: blockchain,
+    lessons: [],
   },
 
   {
@@ -167,6 +195,7 @@ const courses = [
       "Web3 is an idea for a new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics.",
     duration: "20mins",
     courseImage: smartContract,
+    lessons: [],
   },
 ];
 

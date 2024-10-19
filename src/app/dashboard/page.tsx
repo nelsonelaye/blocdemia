@@ -2,6 +2,7 @@ import Button from "@/components/common/Button";
 import CourseCard from "@/components/common/CourseCard";
 import courses from "@/constants/courses";
 import DashboardLayout from "@/layout/DashboardLayout";
+import Link from "next/link";
 import React from "react";
 
 const Dashboard = () => {
@@ -17,7 +18,9 @@ const Dashboard = () => {
               </p>
             </div>
 
-            <Button text="View all course" withArrow={true} variant="fit" />
+            <Link href="/courses">
+              <Button text="View all course" withArrow={true} variant="fit" />
+            </Link>
           </div>
           <div>
             <h3 className="font-semibold text-lg mb-5">Recommeded courses</h3>
