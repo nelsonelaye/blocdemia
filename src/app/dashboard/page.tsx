@@ -12,7 +12,7 @@ import { base } from "viem/chains";
 const Dashboard = () => {
   const { address } = useAccount();
   const { data: name } = useName({
-    address: address ?? "",
+    address: address ?? ("" as `0x${string}`),
     chain: base,
   });
   return (
