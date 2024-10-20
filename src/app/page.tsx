@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <BackgroundLayout>
       <div className="w-full h-full max-h-[1024px] gap-[99px] flex flex-col sm:flex-row items-center justify-center">
-        <div className="w-full max-w-[626px] h-[60vh] md:min-h-[351.86px] h-auto p-[20px] py-[40px] sm:bg-[#32323233]/20 rounded-[32px]">
+        <div className="w-full max-w-[626px] h-[60vh] md:min-h-[351.86px] md:h-auto p-[20px] py-[40px] sm:bg-[#32323233]/20 rounded-[32px]">
           <Image
             src={logo}
             alt="Blocdemia logo"
