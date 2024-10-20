@@ -3,10 +3,7 @@ import localFont from "next/font/local";
 // import "@mantine/core/styles.css";
 import "@coinbase/onchainkit/styles.css";
 import "./globals.css";
-import { cookieToInitialState } from "wagmi";
-import { getConfig } from "@/utils/wagmi";
-import { headers } from "next/headers";
-import { Providers } from "@/components/providers/Providers";
+import dynamic from "next/dynamic";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,15 +21,18 @@ export const metadata: Metadata = {
   description: "Master web3 skills",
 };
 
+const OnchainProviders = dynamic(
+  () => import("../components/providers/OnchainProviders"),
+  {
+    ssr: false,
+  }
+);
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const initialState = cookieToInitialState(
-    getConfig(),
-    headers().get("cookie")
-  );
   return (
     <html lang="en">
       <head>
@@ -46,7 +46,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers initialState={initialState}>{children}</Providers>
+        <OnchainProviders>{children}</OnchainProviders>
       </body>
     </html>
   );

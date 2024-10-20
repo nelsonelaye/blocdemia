@@ -1,25 +1,36 @@
+"use client";
 import Button from "@/components/common/Button";
 import CourseCard from "@/components/common/CourseCard";
 import courses from "@/constants/courses";
 import DashboardLayout from "@/layout/DashboardLayout";
+import { useName } from "@coinbase/onchainkit/identity";
 import Link from "next/link";
 import React from "react";
+import { useAccount } from "wagmi";
+import { base } from "viem/chains";
 
 const Dashboard = () => {
+  const { address } = useAccount();
+  const { data: name } = useName({
+    address,
+    chain: base,
+  });
   return (
     <DashboardLayout>
       <div className="w-full  flex flex-col gap-[24px] ">
         <section className="bg-[#404040] rounded-[26px] w-full mb-6 p-6">
           <div className="w-full flex items-center justify-between mb-[28px]">
             <div>
-              <h2 className="text-2xl leading-8 font-semibold">Hello, XOXO</h2>
+              <h2 className="text-2xl leading-8 font-semibold">
+                Hello, {name}
+              </h2>
               <p className="text-sm text-[#d2d2d2]">
                 Let’s start your journey to mastering Web3.{" "}
               </p>
             </div>
 
             <Link href="/courses">
-              <Button text="View all course" withArrow={true} variant="fit" />
+              <Button text="View all course" withArrow={true} size="fit" />
             </Link>
           </div>
           <div>

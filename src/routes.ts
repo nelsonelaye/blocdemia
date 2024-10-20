@@ -24,7 +24,7 @@ export const routes = [
   },
   {
     name: "Community",
-    link: "/#community",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSeTSJZP7RY9peAfPumnzLO2Bz1OhJImgscxGe7Aj5E_m3EPgQ/viewform?usp=send_form",
     icon: comunity,
   },
   {

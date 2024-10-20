@@ -7,9 +7,20 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={styles["layout_container"]}>
       <Sidebar />
-      <div className="w-full h-full overflow-auto flex-1">
+      <div
+        className="w-full h-full relative"
+        style={{
+          paddingLeft: "205px",
+        }}
+      >
         <Header />
-        <div className="w-full h-full overflow-y-scroll   bg-[#222] px-[24px] over">
+        <div
+          className="w-full h-full  bg-[#222] px-[24px]"
+          style={{
+            paddingTop: 94,
+            paddingBottom: 24,
+          }}
+        >
           {children}
         </div>
       </div>

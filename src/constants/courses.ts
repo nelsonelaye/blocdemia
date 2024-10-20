@@ -28,6 +28,136 @@ const courses = [
           "https://drive.google.com/file/d/1a1JwIdhIEnsd6438rcNEzWKOJCp7zBEe/preview",
       },
     ],
+    quiz: [
+      {
+        question: "What is a Web3 wallet primarily used for?",
+        options: [
+          {
+            value: "Storing social media data",
+            isCorrect: false,
+          },
+          {
+            value: "Managing and storing cryptocurrency",
+            isCorrect: true,
+          },
+          {
+            value: "Holding personal files",
+            isCorrect: false,
+          },
+          {
+            value: "Writing code for websites",
+            isCorrect: false,
+          },
+          {
+            value: "Sending and receiving emails",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "How do you connect your Web3 wallet to a blockchain app?",
+        options: [
+          {
+            value: "By downloading a separate app",
+            isCorrect: false,
+          },
+          {
+            value: "By scanning a QR code",
+            isCorrect: false,
+          },
+          {
+            value:
+              "By clicking a “Connect Wallet” button and confirming in your wallet app",
+            isCorrect: true,
+          },
+          {
+            value: "By entering your password on the website",
+            isCorrect: false,
+          },
+          {
+            value: "By sending an email to the app developers",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "How can you fund a Web3 wallet?",
+        options: [
+          {
+            value: "By transferring crypto from an exchange",
+            isCorrect: true,
+          },
+          {
+            value: "By connecting it to a physical bank",
+            isCorrect: false,
+          },
+          {
+            value: "By mining it directly",
+            isCorrect: false,
+          },
+          {
+            value: "By receiving crypto from another wallet",
+            isCorrect: false,
+          },
+          {
+            value: "By buying crypto from a store",
+            isCorrect: false,
+          },
+        ],
+      },
+
+      {
+        question: "Which of the following is a common Web3 wallet?",
+        options: [
+          {
+            value: "MetaMask",
+            isCorrect: false,
+          },
+          {
+            value: "PayPal",
+            isCorrect: false,
+          },
+          {
+            value: "Coinbase Wallet",
+            isCorrect: true,
+          },
+          {
+            value: "Trust Wallet",
+            isCorrect: false,
+          },
+          {
+            value: "Google Wallet",
+            isCorrect: false,
+          },
+        ],
+      },
+
+      {
+        question: "What is your Web3 wallet address?",
+        options: [
+          {
+            value: "The same as your email address",
+            isCorrect: false,
+          },
+          {
+            value: "A unique string of numbers and letters",
+            isCorrect: true,
+          },
+          {
+            value: "Your home address",
+            isCorrect: false,
+          },
+          {
+            value: "Your social security number",
+            isCorrect: false,
+          },
+          {
+            value: "A password you create when setting up the wallet",
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
   },
 
   {

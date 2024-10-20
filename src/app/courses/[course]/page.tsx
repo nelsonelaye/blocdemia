@@ -4,11 +4,10 @@ import React, { useMemo, useState } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 import courses from "@/constants/courses";
 import LessonCard from "@/components/common/LessonCard";
-import Button from "@/components/common/Button";
 import Quiz from "@/components/modals/Quiz";
+import { BsDot } from "react-icons/bs";
 
 const Course = ({ params }: { params: { course: string } }) => {
-  const [openModal, setOpenModal] = useState(false);
   const [playingLesson, setPlayingLesson] = useState(0);
   const courseData = useMemo(() => {
     return courses.find(
@@ -70,7 +69,7 @@ const Course = ({ params }: { params: { course: string } }) => {
                 </Tabs.Trigger>
               </Tabs.List>
               <Tabs.Content
-                className="grow rounded-b-md  p-5 outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
+                className="grow rounded-b-md  py-5 outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
                 value="resources"
               >
                 <div className="mb-[40px]">
@@ -86,13 +85,13 @@ const Course = ({ params }: { params: { course: string } }) => {
                     Description
                   </h4>
                   <p className="text-[#a8a8a8] max-w-[720px]">
-                    Rorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    {/* Rorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nunc vulputate libero et velit interdum, ac aliquet odio
                     mattis.Rorem ipsum dolor sit amet, consectetur adipiscing
                     elit. Nunc vulputate libero et velit interdum, ac aliquet
                     odio mattis.Rorem ipsum dolor sit amet, consectetur
                     adipiscing elit. Nunc vulputate libero et velit interdum, ac
-                    aliquet odio mattis.
+                    aliquet odio mattis. */}
                   </p>
                 </div>
 
@@ -100,7 +99,7 @@ const Course = ({ params }: { params: { course: string } }) => {
                   <h4 className="text-lg font-semibold mb-[9px] leading-6">
                     Useful links
                   </h4>
-                  <p className="text-[#a8a8a8]">example.com</p>
+                  {/* <p className="text-[#a8a8a8]">example.com</p> */}
                 </div>
               </Tabs.Content>
               <Tabs.Content className="space-y-4 > * + *" value="lessons">
@@ -120,19 +119,21 @@ const Course = ({ params }: { params: { course: string } }) => {
                   Attention!
                 </h3>
 
-                <ul className="list-disc !p-0  space-y-6 > * + * mb-6">
-                  <li className="font-normal text-[#D2D2D2]">
-                    You will have to complete all the lessons in this course to
-                    take the quiz. If you haven’t go back and do so.
+                <ul className="!pl-0  space-y-4 > * + * mb-6">
+                  <li className="flex items-center gap-2 font-normal text-[#D2D2D2]">
+                    <BsDot fontSize={20} /> You will have to complete all the
+                    lessons in this course to take the quiz. If you haven’t go
+                    back and do so.
                   </li>
 
-                  <li>
-                    NFT Certificates will be awarded to students who scored{" "}
+                  <li className="flex items-center gap-2 font-normal text-[#D2D2D2]">
+                    <BsDot fontSize={20} /> NFT Certificates will be awarded to
+                    students who scored{" "}
                     <span className="text-[#DCBBFF]">at least 80%.</span>
                   </li>
 
-                  <li>
-                    You only have{" "}
+                  <li className="flex items-center gap-2 font-normal text-[#D2D2D2]">
+                    <BsDot fontSize={20} /> You only have{" "}
                     <span className="text-[#DCBBFF]">2 chances.</span> If you
                     don’t score up to 80%, sorry we don’t have a certificate for
                     you.

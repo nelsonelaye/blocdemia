@@ -5,8 +5,6 @@ import logo from "@/assets/images/logo.png";
 import { routes } from "@/routes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { RiSettings2Line } from "react-icons/ri";
-import { HiOutlineUser } from "react-icons/hi2";
 import { twMerge } from "tailwind-merge";
 import settingsIcon from "@/assets/images/icons/setting.png";
 import userIcon from "@/assets/images/icons/user-profile.png";
@@ -14,7 +12,7 @@ import userIcon from "@/assets/images/icons/user-profile.png";
 const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <div className="w-[205px] bg-[#1a1a1a] h-full px-3 pt-4 overflow-hidden">
+    <div className="w-[205px] bg-[#1a1a1a] h-screen px-3 pt-4 fixed">
       <div className="pl-[9px] mb-[36px]">
         <Image
           src={logo}

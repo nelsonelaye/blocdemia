@@ -5,24 +5,39 @@ import { twMerge } from "tailwind-merge";
 interface props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   withArrow?: boolean;
-  variant?: "fit" | "normal";
+  size?: "fit" | "normal";
+  variant?: "normal" | "outline";
+  className?: string;
+  rotateIcon?: boolean;
 }
 
-const Button = ({ text, variant, withArrow, ...props }: props) => {
+const Button = ({
+  text,
+  variant,
+  size,
+  rotateIcon,
+  withArrow,
+  className,
+  ...props
+}: props) => {
   return (
-    <div>
-      <button
-        className={twMerge(
-          "bg-purple-100 text-white font-medium rounded-3xl h-[50px] px-[24px] flex items-center justify-center w-full leading-6 my-[10px] gap-2 disabled:bg-[#323232] disabled:text-[#7e7e7e]",
-          variant === "fit" && "w-fit"
-        )}
-        {...props}
-      >
-        {text}
+    <button
+      className={twMerge(
+        "bg-purple-100 border border-purple-100 text-white font-medium rounded-3xl h-[50px] px-[24px] flex items-center justify-center !w-full leading-6 my-[10px] gap-2 disabled:bg-[#323232] disabled:border-[#323232] disabled:text-[#7e7e7e]",
+        variant == "outline"
+          ? "border-[#EAD6FF]  bg-transparent text-[#EAD6FF]"
+          : "",
+        size == "fit" ? "!w-fit" : "",
+        className
+      )}
+      {...props}
+    >
+      {text}
 
-        {withArrow && <FaArrowRightLong />}
-      </button>
-    </div>
+      {withArrow && (
+        <FaArrowRightLong className={rotateIcon ? "-rotate-45" : ""} />
+      )}
+    </button>
   );
 };
 

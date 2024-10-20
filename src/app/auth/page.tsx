@@ -1,3 +1,4 @@
+"use client";
 import BackgroundLayout from "@/layout/BackgroundLayout";
 import {
   Address,
@@ -15,13 +16,17 @@ import {
   WalletDropdownDisconnect,
   WalletDropdownLink,
 } from "@coinbase/onchainkit/wallet";
+import { useAccount } from "wagmi";
 import Image from "next/image";
 import React from "react";
 import logo from "@/assets/images/logo.png";
 import Button from "@/components/common/Button";
 import WalletWrapper from "@/components/onchain/WalletWrapper";
+import SignupButton from "@/components/common/SignupButton";
+import LoginButton from "@/components/common/LoginButton";
 
 const Auth = () => {
+  const { address } = useAccount();
   return (
     <BackgroundLayout>
       <div className="w-full h-full max-h-[1024px] gap-[99px] flex flex-col sm:flex-row items-center justify-center">
@@ -45,6 +50,9 @@ const Auth = () => {
 
           <div>
             <Button text="Create account" disabled />
+
+            <SignupButton />
+            {!address && <LoginButton />}
 
             <WalletWrapper
               className="w-full rounded-3xl h-[50px] bg-[#323232] font-medium text-base max-w-full my-[10px]"
