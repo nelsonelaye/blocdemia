@@ -6,7 +6,7 @@ import { twMerge } from "tailwind-merge";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const [openSidebar, setOpenSidebar] = useState(false);
-
+  console.log(openSidebar);
   return (
     <div className={styles["layout_container"]}>
       <div
@@ -23,7 +23,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           styles["dashboard_content"]
         )}
         onClick={() => {
-          setOpenSidebar(false);
+          if (openSidebar) {
+            setOpenSidebar(false);
+          }
         }}
       >
         <Header setOpenSidebar={setOpenSidebar} />
