@@ -139,7 +139,9 @@ const Course = ({ params }: { params: { course: string } }) => {
                     you.
                   </li>
                 </ul>
-                <p className="text-[#DCBBFF] italic">Best of luck, champ!</p>
+                <p className="text-[#DCBBFF] italic mb-3">
+                  Best of luck, champ!
+                </p>
 
                 {courseData?.quiz && (
                   <Quiz title={params.course} quiz={courseData?.quiz} />

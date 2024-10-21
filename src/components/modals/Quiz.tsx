@@ -5,6 +5,8 @@ import { IoClose } from "react-icons/io5";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import Image from "next/image";
 import certificate from "@/assets/images/certificate.png";
+// import { NEXT_PUBLIC_CONTRACT_ADDRESS } from "../../../config";
+// import { contractABI } from "@/utils/contractABI";
 
 interface optionInterface {
   value: string;
@@ -65,6 +67,103 @@ const Quiz = ({ quiz, title }: { quiz: quizInterface[]; title: string }) => {
     setShowResult(false);
   };
 
+  // const { address } = useAccount(); // Get the connected wallet address
+  // const [isMinting, setIsMinting] = useState(false);
+  // const [txHash, setTxHash] = useState(null);
+
+  // const mintCertificate = async () => {
+  //   if (address) {
+  //     try {
+  //       setIsMinting(true);
+
+  //       // Prepare the transaction for the mintCertificate function
+  //       const { request } = await prepareWriteContract({
+  //         address: NEXT_PUBLIC_CONTRACT_ADDRESS,
+  //         abi: contractABI,
+  //         functionName: "mintCertificate",
+  //         // Add additional arguments if your function requires them
+  //       });
+
+  //       // Send the transaction using writeContract
+  //       const { hash } = await writeContract(request);
+  //       setTxHash(hash);
+  //       console.log("Transaction hash:", hash);
+  //     } catch (error) {
+  //       console.error("Error minting certificate:", error);
+  //     } finally {
+  //       setIsMinting(false);
+  //     }
+  //   } else {
+  //     alert("Connect your wallet to mint the certifcate");
+  //   }
+  // };
+
+  // const { writeContract } = useWriteContract();
+  // const mintCertificate = async () => {
+  //   try {
+  //     setIsMinting(true);
+
+  //     // Fetch the signer to interact with the contract
+  //     const signer = await fetchSigner();
+
+  //     if (!signer) {
+  //       throw new Error("No signer available");
+  //     }
+
+  //     // Get contract instance with signer
+  //     const contract = getContract({
+  //       address: NEXT_PUBLIC_CONTRACT_ADDRESS,
+  //       abi: contractABI,
+  //       signerOrProvider: signer,
+  //     });
+
+  //     writeContract({
+  //       address: NEXT_PUBLIC_CONTRACT_ADDRESS,
+  //       abi: contractABI,
+  //       functionName: "mintCertificate",
+  //     })
+  //     // Call the mintCertificate function on the contract
+  //     const tx = await contract.mintCertificate();
+
+  //     // Wait for the transaction to be mined
+  //     await tx.wait();
+  //     setTxHash(tx.hash);
+  //     console.log("Transaction hash:", tx.hash);
+  //   } catch (error) {
+  //     console.error("Error minting certificate:", error);
+  //   } finally {
+  //     setIsMinting(false);
+  //   }
+  // };
+
+  // const publicClient = usePublicClient(); // Get provider to interact with the blockchain
+
+  // const { write, data, error } = useContractWrite({
+  //   address: NEXT_PUBLIC_CONTRACT_ADDRESS,
+  //   abi: contractABI,
+  //   functionName: "mintCertificate",
+  //   args: [], // No arguments for this function
+  // });
+
+  // const mintCertificate = async () => {
+  //   try {
+  //     // const tx = await writeContract({
+  //     //   address: NEXT_PUBLIC_CONTRACT_ADDRESS,
+  //     //   abi: contractABI,
+  //     //   functionName: "mintCertificate",
+  //     //   args: [], // Add function arguments here if needed
+  //     //   signer: publicClient, // Provide the connected signer or provider
+  //     // });
+
+  //     const { data } = await write({
+  //       address, // Pass the user's address as the sender
+  //     });
+  //     console.log("Transaction hash:", data.hash);
+  //   } catch (error) {
+  //     console.error("Error minting certificate:", error);
+  //   }
+  // };
+
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
@@ -121,7 +220,11 @@ const Quiz = ({ quiz, title }: { quiz: quizInterface[]; title: string }) => {
                     withArrow
                     rotateIcon
                     onClick={() => {}}
+                    disabled
                   />
+                  <span className="text-center text-xs block">
+                    Minting of NFT certificate not available yet
+                  </span>
                 </div>
               </>
             ) : (
@@ -222,6 +325,7 @@ const Quiz = ({ quiz, title }: { quiz: quizInterface[]; title: string }) => {
                 size="fit"
                 withArrow
                 onClick={calculateScore}
+                disabled={step + 1 !== quiz.length}
               />
             </div>
           </Dialog.Content>

@@ -10,7 +10,7 @@ interface iProps {
   courseImage?: string | StaticImageData;
 }
 const CourseCard = ({ title, content, courseImage, time }: iProps) => {
-  const availableCourses = ["web3 wallets"];
+  const availableCourses = ["blockchain", "web3 wallets"];
   return (
     <div className="w-full max-w-[381px] rounded-s-3xl col-span-1 flex flex-col gap-4">
       <div className="bg-gray-800 rounded-t-md w-full h-[202px] rounded-tr-3xl rounded-tl-3xl overflow-hidden">
@@ -28,10 +28,9 @@ const CourseCard = ({ title, content, courseImage, time }: iProps) => {
       </div>
       <h1 className="text-lg font-semibold text-white leading-6">{title}</h1>
       <p className="text-sm text-neutral-90 font-normal leading-[22px] truncate">
-        {/* {content} */}
-        Web3 is an idea for a new iteration of the World Wide Web which
-        incorporates concepts such as decentralization, blockchain technologies,
-        and token-based economics.
+        {content
+          ? content
+          : " Web3 is an idea for a new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics."}
       </p>
       <p className="text-sm   text-neutral-90 font-normal leading-[22px] mb-2 flex items-center">
         <TbClockPlay fontSize={16} className="mr-[9.27px]" /> {time}

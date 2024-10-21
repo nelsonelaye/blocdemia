@@ -19,7 +19,7 @@ const Dashboard = () => {
     <DashboardLayout>
       <div className="w-full  flex flex-col gap-[24px] ">
         <section className="bg-[#404040] rounded-[26px] w-full mb-6 p-6">
-          <div className="w-full flex items-center justify-between mb-[28px]">
+          <div className="w-full flex items-center justify-between flex-wrap mb-[28px]">
             <div>
               <h2 className="text-2xl leading-8 font-semibold">
                 Hello, {name}

@@ -6,7 +6,13 @@
   position: relative;
 }
 
-@media screen and (min-width: 768px) {
+.dashboard_content {
+}
+
+@media screen and (min-width: 640px) {
+  .dashboard_content {
+    padding-left: 205px;
+  }
   /* .layout_container { */
   /* display: grid; */
   /* grid-template-columns: auto 1fr; */

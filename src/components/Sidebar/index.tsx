@@ -12,7 +12,7 @@ import userIcon from "@/assets/images/icons/user-profile.png";
 const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <div className="w-[205px] bg-[#1a1a1a] h-screen px-3 pt-4 fixed">
+    <div className="w-[205px] bg-[#1a1a1a] h-screen px-3 pt-4 fixed z-10 ">
       <div className="pl-[9px] mb-[36px]">
         <Image
           src={logo}
@@ -30,7 +30,7 @@ const Sidebar = () => {
               key={route.name}
               href={route.link}
               className={twMerge(
-                "px-[12px] py-[16px] w-full flex items-center gap-2 font-medium text-sm leading-[22px]",
+                "px-[12px] py-[16px] w-full flex items-center gap-2 font-medium text-sm leading-[22px] cursor-pointer",
                 pathname === route.link && "bg-[#9633FF] rounded-[18px]"
               )}
             >

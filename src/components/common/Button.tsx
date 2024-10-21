@@ -23,7 +23,7 @@ const Button = ({
   return (
     <button
       className={twMerge(
-        "bg-purple-100 border border-purple-100 text-white font-medium rounded-3xl h-[50px] px-[24px] flex items-center justify-center !w-full leading-6 my-[10px] gap-2 disabled:bg-[#323232] disabled:border-[#323232] disabled:text-[#7e7e7e]",
+        "bg-purple-100 border border-purple-100 text-white font-medium rounded-3xl h-[50px] px-[24px] flex items-center justify-center !w-full leading-6 my-[10px] gap-2 disabled:bg-[#323232] disabled:border-[#323232] disabled:text-[#7e7e7e] whitespace-nowrap",
         variant == "outline"
           ? "border-[#EAD6FF]  bg-transparent text-[#EAD6FF]"
           : "",

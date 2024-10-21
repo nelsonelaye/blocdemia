@@ -2,11 +2,25 @@
 import React from "react";
 import SignupButton from "../common/SignupButton";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import { IoMenuSharp } from "react-icons/io5";
 
-const Header = () => {
+const Header = ({
+  setOpenSidebar,
+}: {
+  setOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   return (
     <div className="border-b-[0.6px] w-full  h-[70px] fixed flex items-center justify-between bg-[#222] border-[#545454] p-5 mb-[28px]">
-      <h2 className="text-[#B977FF] text-lg font-semibold leading-6">
+      <IoMenuSharp
+        color="#B977FF"
+        className="sm:hidden cursor-pointer"
+        fontSize={20}
+        onClick={() => {
+          console.log("somethig");
+          setOpenSidebar(true);
+        }}
+      />
+      <h2 className="hidden sm:block text-[#B977FF] text-lg font-semibold leading-6">
         Dashboard
       </h2>
 

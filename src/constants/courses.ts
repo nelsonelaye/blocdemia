@@ -6,6 +6,182 @@ import smartContract from "@/assets/images/smart_contracts.png";
 
 const courses = [
   {
+    title: "Blockchain",
+    category: "Blockchain",
+    descriptiopn:
+      "Web3 is an idea for a new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics.",
+    duration: "20mins",
+    courseImage: blockchain,
+    lessons: [
+      {
+        title: "What is Blockchain",
+        duration: "2mins",
+        courseImage: blockchain,
+        source:
+          "https://drive.google.com/file/d/1rGFiKXcWJWhhWcRVWINX6a9NkE7TAaC4/preview",
+      },
+      {
+        title: "How does a Blockchain work",
+        duration: "3mins",
+        courseImage: blockchain,
+        source:
+          "https://drive.google.com/file/d/1SRbdQyqYEjdQ2kkN9nCH1twsZNTurpwZ/preview",
+      },
+      {
+        title: "Types of Blockchain",
+        duration: "4mins",
+        courseImage: blockchain,
+        source:
+          "https://drive.google.com/file/d/1UEYzfcOVicJd_9Zc3mBuuSY_-8GAgmxw/preview",
+      },
+      {
+        title: "Uses of Blockchain",
+        duration: "6mins",
+        courseImage: blockchain,
+        source:
+          "https://drive.google.com/file/d/10Qp2wY7ymYFzTpglR6m-5IrhB90nUgGM/preview",
+      },
+      {
+        title: "Why does Blockchain matter",
+        duration: "5mins",
+        courseImage: blockchain,
+        source:
+          "https://drive.google.com/file/d/11pQUrNtXj19fpbt0UaME4YJR2sSOdIWl/preview",
+      },
+    ],
+    quiz: [
+      {
+        question: "What is a blockchain?",
+        options: [
+          {
+            value: "A type of centralized database",
+            isCorrect: false,
+          },
+          {
+            value: "A digital ledger shared across multiple computers",
+            isCorrect: true,
+          },
+          {
+            value: "A programming language used for web development",
+            isCorrect: false,
+          },
+          {
+            value: "A cloud storage system for companies",
+            isCorrect: false,
+          },
+          {
+            value: "A single record stored in one location",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question:
+          "Which of the following is an example of a public blockchain?",
+        options: [
+          {
+            value: "A company’s internal database",
+            isCorrect: false,
+          },
+          {
+            value: "Bitcoin",
+            isCorrect: true,
+          },
+          {
+            value: "A private supply chain network",
+            isCorrect: false,
+          },
+          {
+            value: "A voting system for a small group",
+            isCorrect: false,
+          },
+          {
+            value: "A bank’s transaction records",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "What is the primary benefit of using a private blockchain?",
+        options: [
+          {
+            value: "Full transparency for everyone",
+            isCorrect: false,
+          },
+          {
+            value: "Slower transaction speeds",
+            isCorrect: false,
+          },
+          {
+            value: "Restricted access and better privacy",
+            isCorrect: true,
+          },
+          {
+            value: "No need for verification",
+            isCorrect: false,
+          },
+          {
+            value: "Anyone can add or edit records",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question:
+          "Which type of blockchain combines features of both public and private blockchains?",
+        options: [
+          {
+            value: "Public blockchain",
+            isCorrect: false,
+          },
+          {
+            value: "Private blockchain",
+            isCorrect: false,
+          },
+          {
+            value: "Consortium blockchain",
+            isCorrect: false,
+          },
+          {
+            value: "Hybrid blockchain",
+            isCorrect: true,
+          },
+          {
+            value: "Decentralized blockchain",
+            isCorrect: false,
+          },
+        ],
+      },
+
+      {
+        question: "What are smart contracts?",
+        options: [
+          {
+            value: "A form of digital money",
+            isCorrect: false,
+          },
+          {
+            value: "Self-executing contracts with terms in code",
+            isCorrect: true,
+          },
+          {
+            value: "Legal contracts stored online",
+            isCorrect: false,
+          },
+          {
+            value: "A way to track goods in the supply chain",
+            isCorrect: false,
+          },
+          {
+            value: "A type of public blockchain",
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+
+  {
     title: "Web3 Wallets",
     category: "Wallets",
     descriptiopn:
@@ -13,6 +189,13 @@ const courses = [
     duration: "10mins",
     courseImage: wallet,
     lessons: [
+      {
+        title: "Introduction ro Web3 wallet",
+        duration: "7mins",
+        courseImage: wallet,
+        source:
+          "https://drive.google.com/file/d/1b-u5oqpkFht0O7v0hkMKX0QsLVdIbbc-/preview",
+      },
       {
         title: "How to create Web3 wallet",
         duration: "3mins",
@@ -158,16 +341,6 @@ const courses = [
         ],
       },
     ],
-  },
-
-  {
-    title: "Blockchain",
-    category: "Blockchain",
-    descriptiopn:
-      "Web3 is an idea for a new iteration of the World Wide Web which incorporates concepts such as decentralization, blockchain technologies, and token-based economics.",
-    duration: "20mins",
-    courseImage: blockchain,
-    lessons: [],
   },
 
   {
