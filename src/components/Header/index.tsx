@@ -10,7 +10,7 @@ const Header = ({
   setOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   return (
-    <div className="border-b-[0.6px] w-full  h-[70px] fixed flex items-center justify-between bg-[#222] border-[#545454] p-5 mb-[28px]">
+    <div className="border-b-[0.6px] w-full sm:w-[calc(100vw-205px)]  h-[70px] fixed flex items-center justify-between bg-[#222] border-[#545454] p-5 mb-[28px]">
       <IoMenuSharp
         color="#B977FF"
         className="sm:hidden cursor-pointer"
@@ -27,7 +27,7 @@ const Header = ({
       <Tooltip.Provider>
         <Tooltip.Root>
           <Tooltip.Trigger asChild>
-            <div className="flex items-center">
+            <div className="flex items-center mr-5">
               <SignupButton className="bg-purple-100" />
             </div>
           </Tooltip.Trigger>

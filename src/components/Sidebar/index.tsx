@@ -9,10 +9,15 @@ import { twMerge } from "tailwind-merge";
 import settingsIcon from "@/assets/images/icons/setting.png";
 import userIcon from "@/assets/images/icons/user-profile.png";
 
-const Sidebar = () => {
+const Sidebar = ({ open }: { open: boolean }) => {
   const pathname = usePathname();
   return (
-    <div className="w-[205px] bg-[#1a1a1a] h-screen px-3 pt-4 fixed z-10 ">
+    <div
+      className={twMerge(
+        "w-[205px] bg-[#1a1a1a] h-screen px-3 pt-4 fixed z-10 ",
+        !open ? "max-sm:hidden" : ""
+      )}
+    >
       <div className="pl-[9px] mb-[36px]">
         <Image
           src={logo}

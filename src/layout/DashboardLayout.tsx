@@ -10,14 +10,8 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   console.log(openSidebar);
   return (
     <div className={styles["layout_container"]}>
-      <div
-        className="max-sm:hidden"
-        style={{
-          display: openSidebar ? "block" : "",
-        }}
-      >
-        <Sidebar />
-      </div>
+      <Sidebar open={openSidebar} />
+
       <div
         className={twMerge(
           "w-full h-full relative",
